@@ -12,6 +12,10 @@ public class Cat {
     public Cat (double aWeight) {
         weight = aWeight;
     }
+    public Cat(){
+        this.weight = 13;
+        System.out.println("In default constructor");
+    }
 
     /**** Getters and Setters ****/
 
@@ -25,6 +29,7 @@ public class Cat {
 
     public boolean isHungry() {
         return hungry;
+
     }
 
     public void setHungry(boolean aHungry) {
@@ -57,6 +62,7 @@ public class Cat {
         // eating when not hungry makes a cat sleepy
         if (!hungry) {
             tired = true;
+            System.out.println("tired set to true");
         }
 
         hungry = false;
