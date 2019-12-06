@@ -28,7 +28,7 @@ public class Main {
         //  field.
         Comparator comparator1 = new ConeComparator();
         cones.sort(comparator1);
-        System.out.println("Cones price after");
+        System.out.println("Cones price after sorting");
         for(Cone cone:cones){
             System.out.println(cone.getName()+ ":  "+cone.getCost());
         }
