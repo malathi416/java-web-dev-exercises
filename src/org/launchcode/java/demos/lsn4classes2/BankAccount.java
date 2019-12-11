@@ -45,11 +45,16 @@ public class BankAccount {
     }
 
     public boolean deposit(double amount){
-        if(amount > 0){
-            this.balance = this.balance + amount;
-            return true;
+//        if(amount > 0){
+//            this.balance = this.balance + amount;
+//            return true;
+//        }
+//        return false;
+        if(amount<=0){
+            throw new IllegalArgumentException();
         }
-        return false;
+        this.balance = this.balance + amount;
+        return true;
     }
     public static void main(String[] args){
         BankAccount doughsaccount = new BankAccount(1000);
@@ -65,6 +70,16 @@ public class BankAccount {
         jennysAccount.withdrawal(50);
         System.out.println(doughsaccount == jennysAccount);
         //answer is false;
+
+
+        //TRy catch
+        try{
+            doughsaccount.deposit(-30);
+        }catch (IllegalArgumentException e){
+           // e.printStackTrace();//to print where the error comes from
+            System.out.println("In catch");
+            doughsaccount.deposit(30);
+        }
         }
     }
 
